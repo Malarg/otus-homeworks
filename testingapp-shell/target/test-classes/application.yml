@@ -1,5 +1,5 @@
 requiredCorrectAnswers: 3
-condition.should-include-shell: true
+condition.should-include-shell: false
 spring:
   main:
     allow-circular-references: true

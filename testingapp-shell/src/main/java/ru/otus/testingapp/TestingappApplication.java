@@ -8,9 +8,7 @@ import ru.otus.testingapp.view.SessionView;
 public class TestingappApplication {
 
 	public static void main(String[] args) {
-		var context = SpringApplication.run(TestingappApplication.class, args);
-		var sessionView = context.getBean(SessionView.class);
-		sessionView.startSession();
+		SpringApplication.run(TestingappApplication.class, args);
 	}
 
 }

@@ -1,1 +1,5 @@
 requiredCorrectAnswers: 3
+condition.should-include-shell: true
+spring:
+  main:
+    allow-circular-references: true
