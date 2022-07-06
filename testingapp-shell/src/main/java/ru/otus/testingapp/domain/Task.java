@@ -1,12 +1,11 @@
 package ru.otus.testingapp.domain;
 
-import java.util.Collections;
 import java.util.List;
 
 public class Task<T> {
-    String question;
-    List<Answer<T>> answers;
-    Answer<T> correctAnswer;
+    private final String question;
+    private final List<Answer<T>> answers;
+    private final Answer<T> correctAnswer;
 
     public String getQuestion() {
         return question;

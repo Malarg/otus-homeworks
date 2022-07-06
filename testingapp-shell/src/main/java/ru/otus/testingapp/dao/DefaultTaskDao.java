@@ -78,20 +78,12 @@ public class DefaultTaskDao implements TasksDao {
     }
 
     private Task<Integer> tryParseInt(String question, List<String> answers) {
-        var integers = answers.stream().map(this::stringToInt).collect(Collectors.toList());
+        var integers = answers.stream().map(Integer::parseInt).collect(Collectors.toList());
         if (integers.stream().anyMatch(Objects::isNull)) {
             return null;
         }
         var integersList = integers.stream().map(Answer::new).collect(Collectors.toList());
         return new Task<>(question, integersList, integersList.get(0));
-    }
-
-    private Integer stringToInt(String value) {
-        try {
-            return Integer.parseInt(value);
-        } catch (NumberFormatException e) {
-            return null;
-        }
     }
 
     private Task<Date> tryParseDate(String question, List<String> answers) {

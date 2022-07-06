@@ -6,6 +6,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.MessageSource;
+import org.springframework.shell.jline.InteractiveShellApplicationRunner;
+import org.springframework.shell.jline.ScriptShellApplicationRunner;
 import ru.otus.testingapp.domain.Answer;
 import ru.otus.testingapp.domain.Person;
 import ru.otus.testingapp.domain.Task;
@@ -16,7 +18,10 @@ import java.util.Locale;
 import static org.assertj.core.api.Assertions.assertThat;
 
 @DisplayName("Класс DefaultTaskDaoTest")
-@SpringBootTest
+@SpringBootTest(properties = {
+        InteractiveShellApplicationRunner.SPRING_SHELL_INTERACTIVE_ENABLED + "=false",
+        ScriptShellApplicationRunner.SPRING_SHELL_SCRIPT_ENABLED + "=false"
+})
 class DefaultTaskDaoTest {
 
     @Autowired
